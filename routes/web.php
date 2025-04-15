@@ -7,6 +7,7 @@ use App\Http\Controllers\Panel\DoctorController;
 use App\Http\Controllers\Panel\SupplierController;
 use App\Http\Controllers\Panel\ProductController;
 use App\Http\Controllers\LaboratoryController;
+use App\Http\Controllers\Panel\LocalController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Inputs\SelectController;
 use Inertia\Inertia;
@@ -49,6 +50,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('clientTypes', ClientTypeController::class);
         # list Client Types
         Route::get('listar-clientTypes',[ClientTypeController::class,'listarClientTypes'])->name('clientTypes.listar');
+        # module locals
+        Route::resource('locals', LocalController::class);
+        # list locals
+         Route::get('listar-locals',[LocalController::class,'listarLocals'])->name('locals.listar');  
         # module Products
         Route::resource('products', ProductController::class); 
         # list Products
@@ -56,6 +61,7 @@ Route::middleware(['auth', 'verified'])->group(function () {
 
 
 
+      
                 # Route group for inputs, selects and autocomplete
                 Route::prefix('inputs')->name('inputs.')->group(function(){
                     # get laboratory list
