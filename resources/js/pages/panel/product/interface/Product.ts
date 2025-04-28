@@ -11,6 +11,8 @@ export type ProductResource = {
     laboratory: string;
     category_id: number;
     category: string;
+    fraction: number;
+    fractionS: string;
     state_fraction: boolean;
     state_igv: boolean;
     state: boolean;
@@ -22,6 +24,7 @@ export type ProductRequest = {
     presentation: string;
     form_farm: string;
     barcode: string;
+    fraction: number;
     laboratory_id: number;
     category_id: number;
 };
@@ -34,6 +37,7 @@ export type ProductRequestUpdate = {
     barcode: string;
     laboratory_id: number;
     category_id: number;
+    fraction: number;
     state_fraction: boolean;
     state_igv: boolean;
     state: boolean;
