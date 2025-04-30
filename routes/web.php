@@ -7,6 +7,7 @@ use App\Http\Controllers\Panel\DoctorController;
 use App\Http\Controllers\Panel\SupplierController;
 use App\Http\Controllers\Panel\ProductController;
 use App\Http\Controllers\LaboratoryController;
+use App\Http\Controllers\ProductPriceController;
 use App\Http\Controllers\Panel\LocalController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Inputs\SelectController;
@@ -67,6 +68,10 @@ Route::middleware(['auth', 'verified'])->group(function () {
         Route::resource('products', ProductController::class); 
         # list Products
         Route::get('listar-products',[ProductController::class,'listarProducts'])->name('products.listar');
+        # module Products
+        Route::resource('product_prices', ProductPriceController::class); 
+        # list Products
+        Route::get('listar-product_prices',[ProductPriceController::class,'listarProductsprice'])->name('product_prices.listar');
         # module Movements
         Route::resource('movements', MovementController::class); 
         # list Movements
@@ -81,6 +86,8 @@ Route::middleware(['auth', 'verified'])->group(function () {
                     # get laboratory list
                     Route::get('laboratory_list',[SelectController::class,'getLaboratoryList'])->name('laboratory_list');
                     Route::get('category_list',[SelectController::class,'getCategoryList'])->name('category_list');
+                    Route::get('product_list',[SelectController::class,'getProductList'])->name('product_list');
+
 
                     Route::get('suppliers', [SelectController::class, 'getSuppliers'])->name('suppliers_list');
                     Route::get('users', [SelectController::class, 'getUsers'])->name('users_list');

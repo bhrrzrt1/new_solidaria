@@ -12,7 +12,6 @@ export type ProductResource = {
     category_id: number;
     category: string;
     fraction: number;
-    fractionS: string;
     state_fraction: boolean;
     state_igv: boolean;
     state: boolean;

@@ -54,6 +54,10 @@ const mainNavItems: NavItem[] = [
         href: '/panel/products',
     },
     {
+        title: 'Precios de Productos',
+        href: '/panel/product_prices',
+    },
+    {
         title: 'Categorías',
         href: '/panel/categories',
     },
