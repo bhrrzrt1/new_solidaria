@@ -22,12 +22,15 @@ class DatabaseSeeder extends Seeder
             CategorySeeder::class,
             LaboratorySeeder::class,
             DoctorSeeder::class,
-            ClientTypeSeeder::class,
             ZoneSeeder::class,
             ClientTypeSeeder::class,
             ProductSeeder::class,
             TypeMovementSeeder::class,
             GuideSeeder::class,
+            CustomerSeeder::class,
+            TypeVoucherSeeder::class,
+            TypePaymentSeeder::class,
+            SaleSeeder::class,
         ]);
     }
 }
