@@ -3,8 +3,9 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
-class UpdateRoleRequest extends FormRequest
+class UpdatePermissionRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -22,9 +23,7 @@ class UpdateRoleRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'name' => 'required|string|max:100',
-            'permisos' => 'required|array',  // Asegura que permisos sea un array y sea obligatorio.
-            'permisos.*' => 'integer|exists:permissions,id',  // Cada permiso debe ser un ID válido en la tabla 'permissions'.
+        'name' => 'required|string|max:100|unique:permissions,name',
         ];
     }
 }
