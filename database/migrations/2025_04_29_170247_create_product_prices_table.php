@@ -16,13 +16,11 @@ return new class extends Migration
             $table->foreignId('product_id')->constrained('products','id');
             $table->double('box_price', 8, 2);
             $table->double('fraction_price', 8, 2)->default(0.00);;
+            $table->timestamp('updated_at')->nullable();
+            $table->timestamp('created_at')->nullable();
+
+
 });
-        Schema::create('type_payments', function (Blueprint $table) {
-            $table->id();
-            $table->string('name')->unique();
-            $table->boolean('status')->default(true);
-            $table->timestamps();
-        });
     }
 
     /**
@@ -31,6 +29,5 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('product_prices');
-        Schema::dropIfExists('type_payments');
     }
 };
