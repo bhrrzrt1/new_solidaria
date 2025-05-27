@@ -5,7 +5,7 @@ import NavUser from '@/components/NavUser.vue';
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarMenu, SidebarMenuButton, SidebarMenuItem } from '@/components/ui/sidebar';
 import { type NavItem } from '@/types';
 import { Link } from '@inertiajs/vue3';
-import { BookOpen,ShieldCheck,Folder,LayoutGrid, Syringe, Box, Building, Map, PackageCheck, Truck, UserCog, Users } from 'lucide-vue-next';
+import { BookOpen, Box, Building, Folder, LayoutGrid, Map, PackageCheck, ShieldCheck, Syringe, Truck, UserCog, Users } from 'lucide-vue-next';
 import AppLogo from './AppLogo.vue';
 
 const mainNavItems: NavItem[] = [
@@ -32,6 +32,11 @@ const mainNavItems2: NavItem[] = [
         href: '/panel/clientTypes',
         icon: Users,
     },
+    {
+        title: 'Ventas',
+        href: '/panel/sales',
+        icon: Box,
+    },
 ];
 const mainNavItems3: NavItem[] = [
     {
@@ -39,22 +44,22 @@ const mainNavItems3: NavItem[] = [
         href: '#',
         icon: Box,
         items: [
-    {
-        title: 'Productos Disponibles',
-        href: '/panel/products',
-    },
-    {
-        title: 'Precios de Productos',
-        href: '/panel/product_prices',
-    },
-    {
-        title: 'Categorías',
-        href: '/panel/categories',
-    },
-    {
-        title: 'Laboratorios',
-        href: '/panel/laboratories',
-    },
+            {
+                title: 'Productos Disponibles',
+                href: '/panel/products',
+            },
+            {
+                title: 'Precios de Productos',
+                href: '/panel/product_prices',
+            },
+            {
+                title: 'Categorías',
+                href: '/panel/categories',
+            },
+            {
+                title: 'Laboratorios',
+                href: '/panel/laboratories',
+            },
         ],
     },
     {
@@ -66,6 +71,13 @@ const mainNavItems3: NavItem[] = [
                 title: 'Movimientos',
                 href: '/panel/movements',
             },
+        ],
+    },
+    {
+        title: 'inventario',
+        href: '#',
+        icon: Box,
+        items: [
             {
                 title: 'Inventario',
                 href: '/panel/inventory',
@@ -104,7 +116,7 @@ const mainNavItems4: NavItem[] = [
 
 const footerNavItems: NavItem[] = [
     {
-        title: 'Github Repo',
+        title: 'Github',
         href: 'https://github.com/laravel/vue-starter-kit',
         icon: Folder,
     },
